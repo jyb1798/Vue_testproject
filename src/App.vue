@@ -1,16 +1,11 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+<div class="menu">
+  <a v-for="item in list" :key="item">{{item}}</a>
+</div>
+
    <div>
-      <h4>{{products[0]}}</h4>
-      <p>{{price2 }} 만원</p>
-   </div>
-    <div>
-      <h4>{{products[1]}}</h4>
-      <p>{{price1}} 만원</p>
-   </div>
-       <div>
-      <h4>{{products[2]}}</h4>
-      <p>{{price1}} 만원</p>
+      <h4 v-for="a in products" :key="a">{{a}}</h4>
+      <p v-for="p in price" :key="p">{{p}} 만원</p>
    </div>
 </template>
 
@@ -20,9 +15,8 @@ export default {
   name : 'App',
   data(){
     return {
-      price1 : 80,
-     price2 : 50,
-     products: ['역삼동원룸', '천호동원름', '마포구원룸']
+     list : ['Home', 'Shop', 'About'], 
+     products: ['역삼동원룸', '천호동원름', '마포구원룸'],
     }
   },
   components: {
@@ -39,6 +33,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+.menu {
+  background-color : #F5dF4D;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.menu a{
+  color: #939597;
+  padding: 20px;
+}
+
+
 </style>
