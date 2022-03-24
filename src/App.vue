@@ -3,9 +3,9 @@
   <a v-for="item in list" :key="item">{{item}}</a>
 </div>
 
-   <div>
-      <h4 v-for="a in products" :key="a">{{a}}</h4>
-      <p v-for="p in price" :key="p">{{p}} 만원</p>
+   <div v-for="(a, i) in products" :key="i">
+      <h4>{{a}}</h4>
+      <p>50만원</p>
    </div>
 </template>
 
@@ -16,11 +16,11 @@ export default {
   data(){
     return {
      list : ['Home', 'Shop', 'About'], 
-     products: ['역삼동원룸', '천호동원름', '마포구원룸'],
+      products: ['역삼동원룸', '천호동원름', '마포구원룸'],
+      price : ['50만원', '70만원', '80만원'],
     }
   },
   components: {
-
   }
 }
 
