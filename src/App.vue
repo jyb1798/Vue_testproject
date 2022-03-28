@@ -3,10 +3,24 @@
   <a v-for="item in list" :key="item">{{item}}</a>
 </div>
 
-   <div v-for="(a, i) in products" :key="i">
-      <h4>{{a}}</h4>
+   <div>
+      <h4>{{products[0]}}</h4>
       <p>50만원</p>
+      <button @click="increase">허위매물신고</button> 
+      <span>신고수 : {{신고수[0]}} </span>
    </div>
+   <div>
+    <h4>{{products[1]}}</h4>
+    <p>60만원</p>
+    <button @click="increase">허위매물신고</button> 
+    <span>신고수 : {{신고수[1]}} </span>
+ </div>
+ <div>
+  <h4>{{products[2]}}</h4>
+  <p>70만원</p>
+  <button @click="increase">허위매물신고</button> 
+  <span>신고수 : {{신고수[2]}} </span>
+</div>
 </template>
 
 <script>
@@ -15,9 +29,15 @@ export default {
   name : 'App',
   data(){
     return {
+     신고수 : [0, 0, 0],
      list : ['Home', 'Shop', 'About'], 
-      products: ['역삼동원룸', '천호동원름', '마포구원룸'],
-      price : ['50만원', '70만원', '80만원'],
+     products: ['역삼동원룸', '천호동원름', '마포구원룸'],
+     price : ['50만원', '70만원', '80만원'],
+    }
+  },
+  method : {
+    increase(){
+      this.신고수 += 1
     }
   },
   components: {
